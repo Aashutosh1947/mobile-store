@@ -43,10 +43,13 @@ export const AccessoriesSection: React.FC = () => {
           <div className="lg:col-span-5">
             <div className="relative rounded-2xl overflow-hidden border border-neutral-300 shadow-md">
               <img
-                src="/src/assets/images/premium_mobile_accessories_1793859188419.jpg"
+                src="/images/accessories/accessories-hero.jpg"
                 alt="Premium mobile accessories at Smart Mobile Store"
                 className="w-full h-48 sm:h-56 object-cover object-center"
                 referrerPolicy="no-referrer"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = "/images/fallback/phone-fallback.jpg";
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end p-4">
                 <p className="text-xs font-medium text-neutral-200">
@@ -87,7 +90,19 @@ export const AccessoriesSection: React.FC = () => {
                 className="group flex flex-col justify-between p-5 rounded-2xl bg-white border border-[#E5E5E5] hover:border-neutral-400 transition-all duration-300 hover:shadow-lg"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-3 text-xs text-neutral-400 font-medium">
+                  <div className="relative w-full h-36 bg-neutral-100 rounded-xl overflow-hidden mb-3.5 border border-neutral-200">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                      referrerPolicy="no-referrer"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = "/images/accessories/accessories-hero.jpg";
+                      }}
+                    />
+                  </div>
+
+                  <div className="flex items-center justify-between mb-2 text-xs text-neutral-400 font-medium">
                     <span>{item.category}</span>
                     <span className="flex items-center gap-1 text-neutral-800 font-semibold bg-neutral-100 px-2 py-0.5 rounded-md text-[11px]">
                       <Check className="w-3 h-3 text-emerald-600" />

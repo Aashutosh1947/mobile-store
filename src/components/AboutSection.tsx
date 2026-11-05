@@ -11,10 +11,13 @@ export const AboutSection: React.FC = () => {
           <div className="lg:col-span-6 relative">
             <div className="rounded-2xl overflow-hidden border border-neutral-800 shadow-2xl group">
               <img
-                src="/src/assets/images/store_interior_modern_1793859185981.jpg"
+                src="/images/store/store-interior.jpg"
                 alt="Smart Mobile Store retail boutique in Bilaspur"
                 className="w-full h-[380px] sm:h-[460px] object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
                 referrerPolicy="no-referrer"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = "/images/fallback/phone-fallback.jpg";
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
 

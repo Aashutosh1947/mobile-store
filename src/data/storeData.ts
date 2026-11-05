@@ -2,6 +2,7 @@
  * Centralized Store Data Arrays
  * All products, services, specifications, and sample prices can be edited here.
  * Strictly uses Indian Rupees (INR) exclusively with en-IN number formatting.
+ * All image assets reference physical local public assets (/images/...).
  */
 
 import { formatINR } from "../utils/currency";
@@ -52,6 +53,7 @@ export interface AccessoryItem {
   startingPrice: number;
   samplePriceDisplay: string;
   keyFeature: string;
+  image: string;
 }
 
 export interface RepairItem {
@@ -63,6 +65,7 @@ export interface RepairItem {
   turnaroundTime: string;
   commonSymptoms: string[];
   iconName: string;
+  image: string;
 }
 
 export interface SimServiceItem {
@@ -154,7 +157,7 @@ export const SERVICES_DATA: ServiceItem[] = [
   },
 ];
 
-// 2. BRAND NEW SMARTPHONES (Sample demo data in Indian Rupees INR exclusively)
+// 2. BRAND NEW SMARTPHONES (Local physical public assets in Indian Rupees INR exclusively)
 export const NEW_PHONES_DATA: NewPhoneItem[] = [
   {
     id: "new-apple-15pro",
@@ -169,7 +172,7 @@ export const NEW_PHONES_DATA: NewPhoneItem[] = [
       storage: "128GB / 256GB / 512GB",
     },
     highlight: "Aerospace Titanium Design",
-    image: "/src/assets/images/hero_smartphones_flagship_1793859184652.jpg",
+    image: "/images/smartphones/apple-iphone-15-pro.jpg",
   },
   {
     id: "new-samsung-s24u",
@@ -184,7 +187,7 @@ export const NEW_PHONES_DATA: NewPhoneItem[] = [
       storage: "256GB / 512GB / 1TB",
     },
     highlight: "Galaxy AI & Built-in S-Pen",
-    image: "/src/assets/images/hero_smartphones_flagship_1793859184652.jpg",
+    image: "/images/smartphones/samsung-galaxy-s24-ultra.jpg",
   },
   {
     id: "new-oneplus-12",
@@ -199,7 +202,7 @@ export const NEW_PHONES_DATA: NewPhoneItem[] = [
       storage: "16GB RAM + 512GB ROM",
     },
     highlight: "100W SUPERVOOC Fast Charge",
-    image: "/src/assets/images/hero_smartphones_flagship_1793859184652.jpg",
+    image: "/images/smartphones/oneplus-12.jpg",
   },
   {
     id: "new-vivo-x100",
@@ -214,7 +217,7 @@ export const NEW_PHONES_DATA: NewPhoneItem[] = [
       storage: "16GB RAM + 512GB Storage",
     },
     highlight: "ZEISS Optical Professional Lens",
-    image: "/src/assets/images/hero_smartphones_flagship_1793859184652.jpg",
+    image: "/images/smartphones/vivo-x100-pro.jpg",
   },
   {
     id: "new-oppo-reno11",
@@ -226,10 +229,10 @@ export const NEW_PHONES_DATA: NewPhoneItem[] = [
       processor: "MediaTek Dimensity 8200",
       camera: "32MP Telephoto Portrait Camera",
       display: "6.7\" 3D Curved AMOLED 120Hz",
-      storage: "12GB RAM + 256GB Storage",
+      storage: "128GB / 256GB Storage",
     },
     highlight: "Ultra-Clear Portrait Camera",
-    image: "/src/assets/images/hero_smartphones_flagship_1793859184652.jpg",
+    image: "/images/smartphones/oppo-reno-11-pro.jpg",
   },
   {
     id: "new-realme-12pro",
@@ -244,7 +247,7 @@ export const NEW_PHONES_DATA: NewPhoneItem[] = [
       storage: "8GB / 12GB RAM + 256GB",
     },
     highlight: "Luxury Watch Dial Design",
-    image: "/src/assets/images/hero_smartphones_flagship_1793859184652.jpg",
+    image: "/images/smartphones/realme-12-pro-plus.jpg",
   },
   {
     id: "new-xiaomi-14",
@@ -259,11 +262,11 @@ export const NEW_PHONES_DATA: NewPhoneItem[] = [
       storage: "12GB RAM + 512GB Storage",
     },
     highlight: "Co-engineered with Leica",
-    image: "/src/assets/images/hero_smartphones_flagship_1793859184652.jpg",
+    image: "/images/smartphones/xiaomi-14.jpg",
   },
 ];
 
-// 3. SECOND-HAND SMARTPHONES (Demo listings in Indian Rupees INR exclusively)
+// 3. SECOND-HAND SMARTPHONES (Local physical public assets in Indian Rupees INR exclusively)
 export const USED_PHONES_DATA: UsedPhoneItem[] = [
   {
     id: "used-ip14pro",
@@ -275,7 +278,7 @@ export const USED_PHONES_DATA: UsedPhoneItem[] = [
     samplePriceDisplay: `${formatINR(68500)}*`,
     batteryHealth: "89% Health",
     warrantySample: "Store Testing Warranty Included",
-    image: "/src/assets/images/refurbished_smartphones_lineup_1793859185286.jpg",
+    image: "/images/used-phones/used-iphone-14-pro.jpg",
     testedChecklist: ["Original Screen", "Face ID 100% Functional", "Clean IMEI / iCloud Clean", "Zero Scratches"],
   },
   {
@@ -288,7 +291,7 @@ export const USED_PHONES_DATA: UsedPhoneItem[] = [
     samplePriceDisplay: `${formatINR(62000)}*`,
     batteryHealth: "Excellent (Tested >90%)",
     warrantySample: "Store Testing Warranty Included",
-    image: "/src/assets/images/refurbished_smartphones_lineup_1793859185286.jpg",
+    image: "/images/used-phones/used-samsung-s23-ultra.jpg",
     testedChecklist: ["Original S-Pen Included", "100x Space Zoom Tested", "Clean Motherboard", "Fast Charging Verified"],
   },
   {
@@ -301,7 +304,7 @@ export const USED_PHONES_DATA: UsedPhoneItem[] = [
     samplePriceDisplay: `${formatINR(34500)}*`,
     batteryHealth: "Superb Dual-Cell Backup",
     warrantySample: "Store Testing Warranty Included",
-    image: "/src/assets/images/refurbished_smartphones_lineup_1793859185286.jpg",
+    image: "/images/used-phones/used-oneplus-11.jpg",
     testedChecklist: ["Original 100W Warp Charger", "Hasselblad Camera Tested", "No Display Line Issue", "Alert Slider Working"],
   },
   {
@@ -314,7 +317,7 @@ export const USED_PHONES_DATA: UsedPhoneItem[] = [
     samplePriceDisplay: `${formatINR(36900)}*`,
     batteryHealth: "87% Health",
     warrantySample: "Store Testing Warranty Included",
-    image: "/src/assets/images/refurbished_smartphones_lineup_1793859185286.jpg",
+    image: "/images/used-phones/used-iphone-13.jpg",
     testedChecklist: ["TrueTone Active", "Cameras Spotless", "Original Box Available", "Minimal Bezel Wear"],
   },
   {
@@ -327,7 +330,7 @@ export const USED_PHONES_DATA: UsedPhoneItem[] = [
     samplePriceDisplay: `${formatINR(20500)}*`,
     batteryHealth: "Original Battery 100%",
     warrantySample: "Store Testing Warranty Included",
-    image: "/src/assets/images/refurbished_smartphones_lineup_1793859185286.jpg",
+    image: "/images/used-phones/used-vivo-v29.jpg",
     testedChecklist: ["Smart Aura Light Tested", "Curved AMOLED Flawless", "Original FlashCharge adapter", "Single Owner Device"],
   },
   {
@@ -340,7 +343,7 @@ export const USED_PHONES_DATA: UsedPhoneItem[] = [
     samplePriceDisplay: `${formatINR(24000)}*`,
     batteryHealth: "Full Day Battery Health",
     warrantySample: "Store Testing Warranty Included",
-    image: "/src/assets/images/refurbished_smartphones_lineup_1793859185286.jpg",
+    image: "/images/used-phones/used-google-pixel-7a.jpg",
     testedChecklist: ["Google Tensor G2 Chip", "Pure Pixel Camera Verified", "Wireless Charging Active", "Original Type-C Cable"],
   },
 ];
@@ -355,6 +358,7 @@ export const ACCESSORIES_DATA: AccessoryItem[] = [
     startingPrice: 99,
     samplePriceDisplay: `From ${formatINR(99)}`,
     keyFeature: "Oleophobic 9H Hardness",
+    image: "/images/accessories/tempered-glass.jpg",
   },
   {
     id: "acc-covers",
@@ -364,6 +368,7 @@ export const ACCESSORIES_DATA: AccessoryItem[] = [
     startingPrice: 149,
     samplePriceDisplay: `From ${formatINR(149)}`,
     keyFeature: "Drop Protection & Grip",
+    image: "/images/accessories/mobile-back-covers.jpg",
   },
   {
     id: "acc-chargers",
@@ -373,6 +378,7 @@ export const ACCESSORIES_DATA: AccessoryItem[] = [
     startingPrice: 499,
     samplePriceDisplay: `From ${formatINR(499)}`,
     keyFeature: "Overheating Protection",
+    image: "/images/accessories/fast-chargers.jpg",
   },
   {
     id: "acc-cables",
@@ -382,6 +388,7 @@ export const ACCESSORIES_DATA: AccessoryItem[] = [
     startingPrice: 199,
     samplePriceDisplay: `From ${formatINR(199)}`,
     keyFeature: "10,000+ Bend Tested",
+    image: "/images/accessories/usb-cables.jpg",
   },
   {
     id: "acc-earphones",
@@ -391,6 +398,7 @@ export const ACCESSORIES_DATA: AccessoryItem[] = [
     startingPrice: 299,
     samplePriceDisplay: `From ${formatINR(299)}`,
     keyFeature: "HD Mic & Deep Bass",
+    image: "/images/accessories/earphones.jpg",
   },
   {
     id: "acc-wireless",
@@ -400,6 +408,7 @@ export const ACCESSORIES_DATA: AccessoryItem[] = [
     startingPrice: 899,
     samplePriceDisplay: `From ${formatINR(899)}`,
     keyFeature: "Bluetooth 5.3 & Low Latency",
+    image: "/images/accessories/wireless-accessories.jpg",
   },
   {
     id: "acc-screen-protectors",
@@ -409,6 +418,7 @@ export const ACCESSORIES_DATA: AccessoryItem[] = [
     startingPrice: 199,
     samplePriceDisplay: `From ${formatINR(199)}`,
     keyFeature: "Two-Way Privacy Shield",
+    image: "/images/accessories/screen-protectors.jpg",
   },
 ];
 
@@ -423,6 +433,7 @@ export const REPAIR_SERVICES_DATA: RepairItem[] = [
     turnaroundTime: "Same-Day Service available for popular models",
     commonSymptoms: ["Cracked outer glass", "Vertical colored lines", "Unresponsive touch spots", "Blank black display"],
     iconName: "Tv",
+    image: "/images/repairs/display-replacement.jpg",
   },
   {
     id: "rep-battery",
@@ -433,6 +444,7 @@ export const REPAIR_SERVICES_DATA: RepairItem[] = [
     turnaroundTime: "Quick 30–60 minutes service",
     commonSymptoms: ["Battery drains in few hours", "Phone heats up while idling", "Back cover lifting up", "Shuts down at 20%"],
     iconName: "BatteryCharging",
+    image: "/images/repairs/battery-replacement.jpg",
   },
   {
     id: "rep-port",
@@ -443,6 +455,7 @@ export const REPAIR_SERVICES_DATA: RepairItem[] = [
     turnaroundTime: "Approx. 45 minutes",
     commonSymptoms: ["Cable must be held at an angle", "Slow charging notification", "Moisture detected warning", "Loose charging pin"],
     iconName: "Zap",
+    image: "/images/repairs/charging-port-repair.jpg",
   },
   {
     id: "rep-sound",
@@ -453,6 +466,7 @@ export const REPAIR_SERVICES_DATA: RepairItem[] = [
     turnaroundTime: "Same-day service",
     commonSymptoms: ["Caller cannot hear your voice", "Distorted music playback", "Very low call receiver sound", "Buzzing audio"],
     iconName: "Mic",
+    image: "/images/repairs/speaker-mic-repair.jpg",
   },
   {
     id: "rep-software",
@@ -463,6 +477,7 @@ export const REPAIR_SERVICES_DATA: RepairItem[] = [
     turnaroundTime: "1 to 3 hours depending on diagnosis",
     commonSymptoms: ["Phone stuck on brand logo", "System UI continuously crashing", "Storage full freeze", "Corrupted firmware"],
     iconName: "Cpu",
+    image: "/images/repairs/software-troubleshooting.jpg",
   },
   {
     id: "rep-general",
@@ -473,6 +488,7 @@ export const REPAIR_SERVICES_DATA: RepairItem[] = [
     turnaroundTime: "Post inspection turnaround",
     commonSymptoms: ["Liquid accidental spill", "Power button not clicking", "Camera glass scratched", "Network antenna drop"],
     iconName: "Wrench",
+    image: "/images/repairs/general-repair.jpg",
   },
 ];
 

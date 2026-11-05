@@ -75,6 +75,9 @@ export const NewPhonesSection: React.FC = () => {
                       alt={`${phone.brand} ${phone.model}`}
                       className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                       referrerPolicy="no-referrer"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = "/images/fallback/phone-fallback.jpg";
+                      }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
                     

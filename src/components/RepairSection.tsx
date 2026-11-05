@@ -55,9 +55,21 @@ export const RepairSection: React.FC = () => {
                 className="group flex flex-col justify-between p-6 rounded-2xl bg-[#F4F4F4] hover:bg-neutral-900 border border-[#E5E5E5] hover:border-neutral-800 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-5">
-                    <div className="w-12 h-12 rounded-xl bg-white group-hover:bg-neutral-800 border border-neutral-200 group-hover:border-neutral-700 flex items-center justify-center text-neutral-900 group-hover:text-white transition-colors duration-200 shadow-sm">
-                      <Icon className="w-6 h-6 stroke-[2]" />
+                  <div className="relative w-full h-36 bg-neutral-200 rounded-xl overflow-hidden mb-4 border border-neutral-200 group-hover:border-neutral-800">
+                    <img
+                      src={repair.image}
+                      alt={repair.title}
+                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                      referrerPolicy="no-referrer"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = "/images/repairs/general-repair.jpg";
+                      }}
+                    />
+                  </div>
+
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-10 h-10 rounded-xl bg-white group-hover:bg-neutral-800 border border-neutral-200 group-hover:border-neutral-700 flex items-center justify-center text-neutral-900 group-hover:text-white transition-colors duration-200 shadow-sm">
+                      <Icon className="w-5 h-5 stroke-[2]" />
                     </div>
                     <div className="flex items-center gap-1.5 text-xs text-neutral-500 group-hover:text-neutral-400 font-medium">
                       <Clock className="w-3.5 h-3.5" />

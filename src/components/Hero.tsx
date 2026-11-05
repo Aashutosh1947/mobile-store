@@ -79,10 +79,13 @@ export const Hero: React.FC = () => {
           <div className="lg:col-span-5 relative flex justify-center">
             <div className="relative w-full max-w-md lg:max-w-none rounded-2xl overflow-hidden border border-neutral-800 bg-neutral-950 shadow-2xl group">
               <img
-                src="/src/assets/images/hero_smartphones_flagship_1793859184652.jpg"
+                src="/images/hero/hero-flagship.jpg"
                 alt="Flagship smartphones showcase at Smart Mobile Store Bilaspur"
                 className="w-full h-[360px] sm:h-[440px] lg:h-[480px] object-cover object-center group-hover:scale-[1.02] transition-transform duration-500 ease-out"
                 referrerPolicy="no-referrer"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = "/images/fallback/phone-fallback.jpg";
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent pointer-events-none" />
               
