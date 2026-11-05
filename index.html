@@ -3,6 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Allow browser extensions/injected frame scripts to safely wrap or set window.fetch
+      (function () {
+        try {
+          var originalFetch = window.fetch;
+          var currentFetch = originalFetch;
+          Object.defineProperty(window, 'fetch', {
+            get: function () {
+              return currentFetch;
+            },
+            set: function (newFetch) {
+              currentFetch = newFetch;
+            },
+            configurable: true,
+            enumerable: true,
+          });
+        } catch (e) {
+          /* ignore if restricted */
+        }
+      })();
+    </script>
     <title>Smart Mobile Store | Smartphones, Repairs & Accessories in Bilaspur</title>
     <meta
       name="description"
