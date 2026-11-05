@@ -1,0 +1,6 @@
+{
+  "name": "Smart Mobile Store",
+  "description": "Premium mobile phone retail, second-hand smartphones, accessories, and expert repair services in Bilaspur, Chhattisgarh.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
